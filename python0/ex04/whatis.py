@@ -10,6 +10,11 @@ def is_even(number: int) -> bool:
         return False
 
 try:
+    assert len(sys.argv) <= 2, "more than one argument is provided"
     is_even(int(sys.argv[1]))
+except AssertionError as e:
+    print("AssertionError:", e)
+except ValueError:
+    print("AssertionError: argument is not an integer")
 except:
     pass
