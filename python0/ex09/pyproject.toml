@@ -1,0 +1,19 @@
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+description = "A sample test package"
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+authors = [{ name = "mreynaud", email = "mreynaud@42Lyon.fr" }]
+
+[project.urls]
+Homepage = "https://github.com/mreynaud/ft_package"
+
+[tool.setuptools.packages.find]
+include = ["ft_package*"]
