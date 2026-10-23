@@ -2,6 +2,19 @@ import sys
 
 
 def count_characters(string: str):
+    """
+    Count and display the number of characters in a string.
+
+    The function counts the total number of characters, uppercase letters,
+    lowercase letters, punctuation marks, whitespace characters, and digits.
+    It then prints the results to the standard output.
+
+    Args:
+        string (str): The text to analyze.
+
+    Returns:
+        None: The function prints the results and does not return a value.
+    """
     total_char: int = len(string)
     upper_letters: int = 0
     lower_letters: int = 0
@@ -30,7 +43,17 @@ def count_characters(string: str):
 
 
 def main():
-    "main"
+    """
+    Handle the program's main execution.
+
+    Reads the text to analyze from a command-line argument or from
+    standard input if no argument is provided. Calls count_characters()
+    to display the character statistics.
+
+    Raises:
+        AssertionError: If more than one command-line argument is provided.
+        KeyboardInterrupt: If the user interrupts the program.
+    """
 
     string: str
     try:

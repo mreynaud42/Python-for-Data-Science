@@ -4,9 +4,8 @@ def ft_filter(function, iterable):
     is true. If function is None, return the items that are true."""
 
     for i in iterable:
-        if function == None:
+        if function is None:
             if i:
                 yield i
         elif function(i):
             yield i
-

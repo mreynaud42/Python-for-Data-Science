@@ -1,8 +1,10 @@
 from ft_filter import ft_filter
+from typing import Callable
 
 CEND = '\33[0m'
 CREDGB = '\33[41m'
 CGREENBG = '\33[42m'
+
 
 def is_fail_print(a, b) -> bool:
 
@@ -14,7 +16,7 @@ def is_fail_print(a, b) -> bool:
 def main():
     "main"
 
-    tests: list[tuple[function, list]] = [
+    tests: list[tuple[Callable, list]] = [
         [lambda x: x <= 1, [0, 1, 2]],
         [lambda x: x.isupper(), "AiuhIBfejrufhie90()C"],
         [lambda x: x.isdigit(), "AiuhIBfejrufhie90()C"],
@@ -44,7 +46,7 @@ def main():
             print(f"{CREDGB}[FAIL]{CEND}\t:", values, func, result_filter, "!=", result_ft_filter)
         else:
             print(f"{CGREENBG}[OK]{CEND}\t:", result_filter, CEND)
-    
+
     is_fail_print(list, dict)
     is_fail_print(list, list)
 

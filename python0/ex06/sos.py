@@ -2,6 +2,23 @@ import sys
 
 
 def sos(string: str) -> str:
+    """
+    Convert a string into its Morse code representation.
+
+    Converts each character of the input string into its corresponding
+    Morse code sequence. Supports uppercase letters, digits, and spaces.
+    Each Morse code sequence is followed by a space.
+
+    Args:
+        string (str): The text to convert. Only uppercase letters,
+            digits, and spaces are supported.
+
+    Returns:
+        str: The Morse code representation of the input string.
+
+    Raises:
+        KeyError: If the string contains an unsupported character.
+    """
     NESTED_MORSE: dict = {
         " ": "/ ",
 
@@ -25,7 +42,18 @@ def sos(string: str) -> str:
 
 
 def main():
-    "main"
+    """
+    Handle the program's main execution.
+
+    Checks that exactly one command-line argument is provided,
+    converts it to uppercase, translates it into Morse code using sos(),
+    and prints the result without the trailing space.
+
+    Raises:
+        AssertionError: If the number of command-line arguments is not one.
+        KeyError: If the input contains an unsupported character.
+        KeyboardInterrupt: If the user interrupts the program.
+    """
 
     try:
         assert len(sys.argv) == 2, "number of arguments is different from 1"
