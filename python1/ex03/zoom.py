@@ -16,7 +16,7 @@ def ft_zoom(path: str) -> None:
         UnidentifiedImageError, DecompressionBombError
     ) as e:
         print(f"{type(e).__name__}: ft_load: {e}")
-        return
+        return None
 
     print(array)
 
@@ -24,11 +24,10 @@ def ft_zoom(path: str) -> None:
     height = (height + 400) // 2 if height > 400 else 400
     width: int = array.shape[1]
     width = (width + 400) // 2 if width > 400 else 400
-    print(f"height: {height} width: {width}")
     array = array[height - 400:height, width - 400:width, 0]
 
     print(
-        "New shape after slicing : "
+        "New shape after slicing: "
         f"{array[:, :, np.newaxis].shape} or {array.shape}"
     )
     print(array)
@@ -37,8 +36,8 @@ def ft_zoom(path: str) -> None:
         plt.imshow(array, cmap="gray")
         plt.show()
     except (TypeError, IndexError, OSError, MemoryError) as e:
-        print(f"{type(e).__name__}: ft_load: {e}")
-        return
+        print(f"{type(e).__name__}: ft_zoom: {e}")
+        return None
 
 
 def main():
