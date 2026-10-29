@@ -21,6 +21,7 @@ def ft_load(path: str) -> NDArray[np.uint8] | None:
     except (
         AssertionError,
         FileNotFoundError,
+        PermissionError,
         UnidentifiedImageError,
         IsADirectoryError,
         DecompressionBombError
@@ -37,7 +38,7 @@ def main():
         "../image/animal.jpeg",
         "load_image.py",
         "no_file",
-        "no_access",
+        "no_access.jpg",
         "..",
         {},
     ]
