@@ -33,8 +33,8 @@ def ft_load(path: str) -> NDArray[np.uint8] | None:
 def main():
     "main of tests"
     tests: list[str] = [
-        "landscape.jpg",
-        "animal.jpeg",
+        "../image/landscape.jpg",
+        "../image/animal.jpeg",
         "load_image.py",
         "no_file",
         "no_access",
