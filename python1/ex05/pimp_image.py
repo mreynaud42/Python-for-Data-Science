@@ -27,13 +27,8 @@ def ft_blue(array: NDArray) -> NDArray:
 
 
 def ft_grey(array: NDArray) -> NDArray:
-    "Inverts the color of the image received."
-    array = array.astype(np.float64)
-    array[:, :, 0] *= 0.2126
-    array[:, :, 0] += array[:, :, 1] * 0.7152
-    array[:, :, 0] += array[:, :, 2] * 0.0722
-    array = array[:, :, 0]
-    array = array.astype(np.uint8)
+    "Converts an RGB image to grayscale using the green channel."
+    array[:, :, 0] = array[:, :, 2] = array[:, :, 1]
     return array
 
 
@@ -49,12 +44,15 @@ def main():
     img_blue_array: NDArray = ft_blue(img_array.copy())
     img_grey_array: NDArray = ft_grey(img_array.copy())
 
-    ft_show(img_array)
-    ft_show(img_invert_array)
-    ft_show(img_red_array)
-    ft_show(img_green_array)
-    ft_show(img_blue_array)
-    ft_show(img_grey_array)
+    try:
+        ft_show(img_array)
+        ft_show(img_invert_array)
+        ft_show(img_red_array)
+        ft_show(img_green_array)
+        ft_show(img_blue_array)
+        ft_show(img_grey_array)
+    except KeyboardInterrupt as e:
+        print(f"{type(e).__name__}")
 
 
 if __name__ == "__main__":
